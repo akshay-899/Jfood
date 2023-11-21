@@ -1,0 +1,218 @@
+html {
+  font-size: 16px;
+}
+body {
+  font-family: "Lato", sans-serif;
+  color: black;
+  margin: 0;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  padding: 0 10vw;
+  z-index: 9;
+  background-color: black;
+}
+.logo {
+  height: 4rem;
+  border-radius: 90%;
+}
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+.links {
+  color: rgb(181, 116, 20);
+  text-decoration: none;
+  text-transform: capitalize;
+}
+.links:hover {
+  color: rgb(239, 16, 16);
+}
+
+.nav-search {
+  display: flex;
+  align-items: center;
+  margin-left: 100px;
+  gap: 1rem;
+}
+
+.search {
+  position: relative;
+  width: 30vw;
+  min-width: 150px;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.search-box {
+  width: 70%;
+  height: 100%;
+  background: #fff;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+  padding-left: 20px;
+}
+.search-btn {
+  position: relative;
+  border: none;
+  right: 0;
+  width: 3rem;
+  height: 100%;
+  text-align: center;
+  cursor: pointer;
+  color: rgb(16, 7, 7);
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+.search-btn:hover {
+  background-color: grey;
+}
+
+.cart {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: black;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transition: 0.5s;
+  margin-left: auto;
+}
+.cart:hover {
+  background: grey;
+}
+.search {
+  margin-left: 30%;
+}
+.cart:hover,
+.locate-btn:hover {
+  background: grey;
+}
+/*hero section*/
+#hero-section {
+  min-height: 100vh;
+  padding: 0 10vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(168, 201, 211) 40%,
+    #32cdc8 150%
+  );
+}
+.hero-content {
+  width: 40%;
+}
+.hero-content h1 {
+  font-size: 50px;
+}
+.hero-line {
+  font-size: 25px;
+  opacity: 0.75;
+  margin-top: 2rem;
+}
+.search.location {
+  width: 100%;
+  height: 3.5rem;
+  border-radius: 2rem;
+  margin: 2.5rem 0;
+}
+.locate-btn {
+  font-size: 1.2rem;
+  width: 4rem;
+  transition: 0.5s;
+}
+.searchlocation.search-box {
+  padding: 1rem 1.5rem;
+  margin-left: 0;
+}
+
+.hero-btn {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.btn {
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  color: #fff;
+  background: orange;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+.btn.transparent {
+  background: transparent;
+  border: 0.1rem solid orange;
+  color: orange;
+}
+.hero-img-container {
+  min-width: 30rem;
+  min-height: 30rem;
+  position: relative;
+}
+.back-ele {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.ellipse {
+  position: absolute;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  border-radius: 100%;
+  border: 0.01rem solid rgb(135, 130, 130);
+  transform-origin: center;
+}
+.ellipse:nth-child(1) {
+  width: 80%;
+  transform: translate(-50%, -50%) rotate(20deg);
+}
+
+.ellipse:nth-child(2) {
+  width: 90%;
+  transform: translate(-50%, -50%) rotate(40deg);
+}
+.ellipse:nth-child(3) {
+  width: 90%;
+  transform: translate(-50%, -50%) rotate(-20deg);
+}
+.foreground-elements {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.hero-img {
+  position: absolute;
+  width: 10rem;
+  border-radius: 100%;
+  box-shadow: 0 1rem 1rem rgb(134, 121, 121);
+}
+.hero-img:nth-child(1) {
+  width: 20rem;
+  left: -8%;
+  top: -5%;
+}
+.hero-img:nth-child(2) {
+  width: 15rem;
+  left: 60%;
+  top: 15%;
+}
+.hero-img:nth-child(3) {
+  width: 20rem;
+  left: 25%;
+  bottom: -20%;
+}
