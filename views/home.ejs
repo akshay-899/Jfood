@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -21,7 +21,7 @@
                             <li><a href="./about">ABOUT</a></li>
                             <li><a href="./food">FOOD</a></li>
                             <li><a href="./review">REVIEWS</a></li>
-                            <!-- <li><a href="">SERVICES</a></li> -->
+                            <li><a href="">SERVICES</a></li>
                             <li><a href="./contact">CONTACT</a></li>
                         </ul>
                     </nav>
@@ -37,4 +37,107 @@
             </div>
         </div>
     </body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Ordering Webpage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="stylesheets/home.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <img src="./images/logo.jpg" class="logo" />
+        <ul class="nav-links">
+          <li class="nav-items"><a href="/" class="links">Home</a></li>
+          <li class="nav-items"><a href="./about" class="links">About Us</a></li>
+          <li class="nav-items"><a href="#" class="links">Restaurants</a></li>
+          <li class="nav-items"><a href="./food" class="links">Menu</a></li>
+          <li class="nav-items"><a href="./contact" class="links">Track order</a></li>
+        </ul>
+
+        <!-----Search box------>
+        <div class="nav-search">
+          <div class="search">
+            <input
+              type="text"
+              class="search-box"
+              placeholder="search Restaurants,Cuisines"
+            />
+            <button class="search-btn"><i class="fa fa-search"></i></button>
+          </div>
+
+          <!-------cart btn------>
+
+          <a href="#" class="cart"
+            ><i class="fa fa-shopping-cart" style="color: aliceblue;"></i
+          ></a>
+        </div>
+      </nav>
+
+      <!---------Hero section-->
+      <main id="hero-section">
+        <!-----hero-content----->
+
+        <div class="hero-content">
+          <h1>Foodies Welcome Here!!</h1>
+          <p class="hero-line"></p>
+          <script>
+            var typed = new Typed(".hero-line", {
+              strings: [
+                "Nothing brings people together like a good food.Hundreds of flavors under one roof.Good food. Good mood.",
+              ],
+              typeSpeed: 100,
+            });
+          </script>
+          <div class="search location">
+            <input
+              type="text"
+              class="search-box"
+              placeholder="search Restaurants,Cuisines"
+            />
+            <button class="search-btn locate-btn">
+              <i class="fa fa-map-marker"></i>
+            </button>
+          </div>
+
+          <div class="hero-btn">
+            <button class="btn">Order food</button>
+            <p style="color: orange;">or</p>
+            <button class="btn transparent">Make Reservation</button>
+          </div>
+        </div>
+
+        <!------hero image container------->
+        <div class="hero-img-container">
+          <div class="back-ele">
+            <div class="ellipse"></div>
+            <div class="ellipse"></div>
+            <div class="ellipse"></div>
+          </div>
+          <div class="foreground-elements">
+            <img src="/Images/img4.jpg" class="hero-img" />
+            <img src="/Images/img5.jpg" class="hero-img" />
+            <img src="/Images/img6.jpg" class="hero-img" />
+          </div>
+        </div>
+      </main>
+    </header>
+  </body>
 </html>

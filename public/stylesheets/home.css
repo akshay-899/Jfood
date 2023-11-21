@@ -17,6 +17,8 @@ body {
   padding: 0 10vw;
   z-index: 9;
   background-color: black;
+  font-size: 1em;
+  font-weight: bold;
 }
 .logo {
   height: 4rem;
@@ -39,7 +41,7 @@ body {
 .nav-search {
   display: flex;
   align-items: center;
-  margin-left: 100px;
+  margin-left: 15%;
   gap: 1rem;
 }
 
@@ -78,7 +80,7 @@ body {
 
 .cart {
   width: 2.5rem;
-  height: 2.5rem;
+  height: 2rem;
   color: black;
   border-radius: 100%;
   display: flex;
@@ -89,16 +91,16 @@ body {
   margin-left: auto;
 }
 .cart:hover {
-  background: grey;
+  background:grey;
 }
 .search {
   margin-left: 30%;
 }
 .cart:hover,
 .locate-btn:hover {
-  background: grey;
+  background: rgb(231, 179, 102);
 }
-/*hero section*/
+/* hero section */
 #hero-section {
   min-height: 100vh;
   padding: 0 10vw;
