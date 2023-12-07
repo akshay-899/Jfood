@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
     <head>
         <title>Animated about us page using HTML & CSS</title>
@@ -25,4 +25,658 @@
             </div>
         </section>
     </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Restaurant Name</title>
+    <style>
+      /* Resetting default browser styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+      body {
+        background-image: linear-gradient(
+          to bottom right,
+          rgb(168, 201, 211) 40%,
+          #32cdc8 150%
+        );
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+      }
+
+      /* navbar */
+      .navbar {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0 0px;
+        z-index: 9;
+        font-weight: bold;
+        background-color: black;
+        font-size: 1em;
+      }
+      .logo {
+        width: 50%;
+        position: absolute;
+        left: 5%;
+        width: fit-content;
+        height: 4rem;
+        border-radius: 90%;
+      }
+      .nav-links {
+        width: 50%;
+        display: flex;
+        margin-left: 50%;
+        justify-content: space-evenly;
+        list-style: none;
+      }
+      .links {
+        color: rgb(181, 116, 20);
+        text-decoration: none;
+        text-transform: capitalize;
+      }
+      .links:hover {
+        color: rgb(239, 16, 16);
+      }
+      section {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 20px;
+      }
+
+      .menu-item {
+        width: 300px;
+        margin: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        overflow: hidden;
+        background-color: #fff;
+        transition: transform 0.3s ease;
+      }
+
+      .menu-item:hover {
+        transform: scale(1.05);
+      }
+
+      img {
+        width: 300px;
+        height: 200px;
+      }
+      @media only screen and (max-width: 600px) {
+        .menu-item {
+          width: calc(100% - 40px);
+        }
+      }
+
+      /* main */
+      main {
+        padding:0 40px;
+        /* margin: 10px 20px; */
+      }
+      h1{
+        margin-bottom: 20px;
+      }
+      .about-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .about-content {
+        max-width: 600px;
+      }
+
+      .about-image {
+        margin-top: 20px;
+      }
+
+      .about-image img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      @media only screen and (max-width: 768px) {
+        header {
+          padding: 10px;
+        }
+
+        .nav-links li {
+          display: block;
+          margin-bottom: 10px;
+        }
+
+        main {
+          padding: 20px;
+        }
+
+        .about-content {
+          padding: 0 10px;
+        }
+      }
+
+      @media only screen and (max-width: 480px) {
+        .logo {
+          font-size: 20px;
+        }
+
+        .about-section {
+          flex-direction: column;
+        }
+
+        .about-image img {
+          width: 100%;
+          height: auto;
+        }
+      }
+      @media only screen and (max-width: 768px) {
+        header {
+          padding: 15px;
+        }
+
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          align-items: center;
+          margin-top: 10px;
+        }
+
+        .nav-links li {
+          margin-bottom: 10px;
+        }
+
+        .nav-links li a {
+          font-size: 16px;
+        }
+
+        .nav-links.active {
+          display: flex;
+        }
+
+        main {
+          /* padding: 20px; */
+        }
+
+        .about-section {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .about-content {
+          padding: 0 10px;
+        }
+
+        .about-image img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      @media only screen and (max-width: 480px) {
+        .logo {
+          font-size: 18px;
+        }
+
+        .about-content {
+          font-size: 16px;
+        }
+      }
+
+      /* Additional styles for enhanced visual appeal */
+      .about-section {
+        /* background-color: #fff; */
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+        padding: 40px;
+        margin:10px;
+      }
+
+      .about-content {
+        max-width: 700px;
+        margin: 0 auto;
+        color: #333;
+        line-height: 1.8;
+      }
+
+      .about-image img {
+        color: #32cdc8;
+        width: 80%;
+        height: 50%;
+        border-radius: 8px;
+        margin-top: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      /* footer */
+      footer {
+  background: linear-gradient(to bottom, #222222, #333333);
+  padding: 40px 0;
+  color: #ffffff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.footer-column {
+  padding: 10px;
+}
+
+.footer-column h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.footer-column a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  line-height: 1.5;
+  transition: all 0.2s ease;
+}
+
+.footer-column a:hover {
+  color: #f1f1f1;
+}
+
+.social-media {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.social-media li {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.social-media li a {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+.social-media li a:hover {
+  color: #f1f1f1;
+}
+
+.social-media li i {
+  margin-right: 5px;
+  font-size: 20px;
+}
+
+.legal-links,
+.contact-info {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-info li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.contact-info li i {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 14px;
+  padding-top: 20px;
+  border-top: 1px solid #444444;
+}
+    </style>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <img src="./images/logo.jpg" class="logo" />
+        <ul class="nav-links">
+          <li class="nav-items"><a href="/" class="links">Home</a></li>
+          <li class="nav-items">
+            <a href="./about" class="links">About Us</a>
+          </li>
+          <li class="nav-items">
+            <a href="./restaurant" class="links">Restaurants</a>
+          </li>
+          <li class="nav-items">
+            <a href="./testimonials" class="links">Testimonials</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="about-section">
+        <div class="about-content">
+          <h1>Welcome to JFOOD</h1>
+
+          <p>
+
+            We are your convenient food delivery platform, bridging the gap
+            between hungry customers and delicious meals. We make it easy for you
+            to discover and order from a wide variety of restaurants, all from the
+            comfort of your own home. 
+          </p>
+           <p> Simply browse our selection, choose your
+            desired dishes, and let us handle the rest. Once you place your order,
+            we seamlessly transmit it directly to the restaurant owner, ensuring
+            efficient communication and fast preparation.</p><p> Enjoy your favorite
+          dishes without the hassle of cooking or leaving your home. We are
+          passionate about delivering a seamless and satisfying experience, one
+          delicious bite at a time.</p>
+        </div>
+        <div class="about-image">
+          <img src="Images/background.png" alt="Restaurant Image" />
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-column">
+            <h3>Navigation</h3>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="./about">About Us</a></li>
+              <li><a href="#">Restaurants</a></li>
+              <li><a href="./food">Menu</a></li>
+              <li><a href="./contact">Testimonials</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Social Media</h3>
+            <ul class="social-media">
+              <li>
+                <a href="https://www.facebook.com/" target="_blank">
+                  <i class="fa fa-facebook"></i>
+                  <span>Facebook</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/" target="_blank">
+                  <i class="fa fa-instagram"></i>
+                  <span>Instagram</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/" target="_blank">
+                  <i class="fa fa-twitter"></i>
+                  <span>Twitter</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Legal</h3>
+            <ul class="legal-links">
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Contact</h3>
+            <ul class="contact-info">
+              <li><i class="fa fa-phone"></i> +1 234 567 890</li>
+              <li><i class="fa fa-envelope"></i> info@jfood.com</li>
+              <li>
+                <i class="fa fa-map-marker"></i> 123 Main Street, City, State
+                12345
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="copyright">&copy; 2023 JFOOD. All rights reserved.</div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
+
+<!-- Review section using local storage -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Food Portal - Reviews</title>
+    <style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.restaurant {
+  margin-bottom: 30px;
+}
+
+/* Form styles */
+.add-review {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.add-review input[type="text"],
+.add-review input[type="number"],
+.add-review button {
+  padding: 8px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+.add-review input[type="text"],
+.add-review input[type="number"] {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.add-review button {
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.add-review button:hover {
+  background-color: #0056b3;
+}
+
+/* Review styles */
+.review-item {
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.review-item p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.review-item p strong {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Header styles */
+h2 {
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+/* Footer styles */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+}
+
+/* Media queries for responsiveness */
+@media only screen and (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+}
+.rating-stars {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+.rating-stars .fa-star {
+  color: #FFD700; /* Set star color */
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.rating-stars .fa-star:hover,
+.rating-stars .fa-star.active {
+  color: #FFA500; /* Change color on hover and for active (selected) stars */
+}
+    </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Online Food Portal - Reviews</h1>
+    <div class="restaurants">
+        <div class="restaurant">
+            <h2>Restaurant A</h2>
+            <div class="reviews" id="restaurantA">
+                <!-- Reviews for Restaurant A will be displayed here
+            </div>
+            <div class="add-review">
+                <input type="text" id="reviewTextA" placeholder="Add a review...">
+                <input type="number" id="ratingA" placeholder="Rating (1-5)">
+                <button onclick="addReview('restaurantA', 'reviewTextA', 'ratingA')">Add Review</button>
+            </div>
+        </div>
+        <div class="restaurant">
+            <h2>Restaurant B</h2>
+            <div class="reviews" id="restaurantB">
+                <!-- Reviews for Restaurant B will be displayed here 
+            </div>
+            <div class="add-review">
+                <input type="text" id="reviewTextB" placeholder="Add a review...">
+                <input type="number" id="ratingB" placeholder="Rating (1-5)">
+                <button onclick="addReview('restaurantB', 'reviewTextB', 'ratingB')">Add Review</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function addReview(restaurantId, reviewTextId, ratingId) {
+        const reviewText = document.getElementById(reviewTextId).value;
+        const rating = document.getElementById(ratingId).value;
+    
+        if (reviewText === '' || rating === '') {
+            alert('Please enter review text and rating.');
+            return;
+        }
+    
+        if (rating < 1 || rating > 5) {
+            alert('Rating should be between 1 and 5.');
+            return;
+        }
+    
+        const reviewsContainer = document.getElementById(restaurantId);
+        const newReview = document.createElement('div');
+        newReview.innerHTML = `<p><strong>Review:</strong> ${reviewText} | <strong>Rating:</strong> ${rating}</p>`;
+        reviewsContainer.appendChild(newReview);
+    
+        // Store review in local storage
+        const storedReviews = JSON.parse(localStorage.getItem(restaurantId)) || [];
+        const reviewObj = { reviewText, rating };
+        storedReviews.push(reviewObj);
+        localStorage.setItem(restaurantId, JSON.stringify(storedReviews));
+    
+        // Clear input fields after adding review
+        document.getElementById(reviewTextId).value = '';
+        document.getElementById(ratingId).value = '';
+    }
+
+    // Retrieve stored reviews on page load
+    window.onload = function() {
+        const storedReviewsA = JSON.parse(localStorage.getItem('restaurantA')) || [];
+        const reviewsContainerA = document.getElementById('restaurantA');
+        storedReviewsA.forEach(review => {
+            const newReview = document.createElement('div');
+            newReview.innerHTML = `<p><strong>Review:</strong> ${review.reviewText} | <strong>Rating:</strong> ${review.rating}</p>`;
+            reviewsContainerA.appendChild(newReview);
+        });
+
+        const storedReviewsB = JSON.parse(localStorage.getItem('restaurantB')) || [];
+        const reviewsContainerB = document.getElementById('restaurantB');
+        storedReviewsB.forEach(review => {
+            const newReview = document.createElement('div');
+            newReview.innerHTML = `<p><strong>Review:</strong> ${review.reviewText} | <strong>Rating:</strong> ${review.rating}</p>`;
+            reviewsContainerB.appendChild(newReview);
+        });
+    };
+</script>
+    </script>
+</body>
+</html> -->

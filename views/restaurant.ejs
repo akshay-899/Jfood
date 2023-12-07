@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+    <style>
+        *{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        body {
+            background-image: linear-gradient(
+    to bottom right,
+    rgb(168, 201, 211) 40%,
+    #32cdc8 150%);
+            background-repeat: no-repeat;
+            width: 100%;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            background-size: cover;
+        }
+
+        header {
+          position:relative;
+          /* margin-top: 50px; */
+
+            color:black;
+            text-align: center;
+            padding: 1em;
+        }
+        .navbar {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 00px;
+  z-index: 9;
+  font-weight: bold;
+  background-color: black;
+  font-size: 1em;
+}
+.logo {
+  width: 50%;
+  position: absolute;
+  left: 5%;
+  width: fit-content;
+  height: 4rem;
+  border-radius: 90%;
+}
+.nav-links {
+  width: 50%;
+  display: flex;
+  padding-left: 50%;
+  justify-content: space-evenly;
+  list-style: none;
+  /* overflow-x:hidden ; */
+}
+.links {
+  color: rgb(181, 116, 20);
+  text-decoration: none;
+  text-transform: capitalize;
+}
+.links:hover {
+  color: rgb(239, 16, 16);
+}
+        section {
+          position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .menu-item {
+            width: 300px;
+            margin: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            background-color: #fff;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item:hover {
+            transform: scale(1.05);
+        }
+
+        img {
+            width: 300px;
+            height:200px;
+        }
+
+        .item-info {
+            padding: 10px;
+        }
+
+        h3, p {
+            margin: 0;
+        }
+        /* #img{
+            height: 100;
+            width: 100;
+        } */
+        @media only screen and (max-width: 600px) {
+            .menu-item {
+                width: calc(100% - 40px);
+            }
+        }
+        #cart {
+            /* background-image: linear-gradient(
+    to bottom right,
+    rgb(218, 229, 232) 40%,
+    #43ddd2 150%); */
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #cart h2 {
+            color: #333;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        #cart-items {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #cart-items li {
+            list-style: disc;
+            font-size: large;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        #cart-items li:last-child {
+            border-bottom: none;
+        }
+
+        #cart-items li div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #cart-items li div span {
+            padding: 25px;
+            gap: 80px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        #cart-items li button {
+           
+            background-color: #ff6347;
+            color: #fff;
+            border: none;
+            margin-left: 10px;
+            padding: 5px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        #cart-items li button:hover {
+            transform: scale(1.1);
+        }
+
+        #total-amount {
+            font-weight: bold;
+            font-size: 1.4em;
+            color: #ff6347;
+            margin-top: 15px;
+        }
+        span{
+            text-decoration: underline;
+            padding: 25px;
+        }
+
+
+        #checkoutBtn {
+            width: fit-content;
+            height: fit-content;
+            margin-top: 15px;
+            background-color: #141414;
+            color: #d71e1e;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            filter: drop-shadow(0 0 10px rgb(181, 224, 124));
+        }
+
+        #checkoutBtn:hover {
+            transform: scale(1.05);
+            color: white;
+        }
+        footer {
+        background: linear-gradient(to bottom, #222222, #333333);
+        padding: 40px 0;
+        color: #ffffff;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+      }
+
+      .footer-column {
+        padding: 10px;
+      }
+
+      .footer-column h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+      .footer-column a {
+        color: inherit;
+        text-decoration: none;
+        display: block;
+        line-height: 1.5;
+        transition: all 0.2s ease;
+      }
+
+      .footer-column a:hover {
+        color: #f1f1f1;
+      }
+
+      .social-media {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .social-media li {
+        margin-right: 10px;
+        margin-bottom: 10px;
+      }
+
+      .social-media li a {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        color: inherit;
+        transition: all 0.2s ease;
+      }
+
+      .social-media li a:hover {
+        color: #f1f1f1;
+      }
+
+      .social-media li i {
+        margin-right: 5px;
+        font-size: 20px;
+      }
+
+      .legal-links,
+      .contact-info {
+        list-style: none;
+        padding: 0;
+      }
+
+      .contact-info li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+      }
+
+      .contact-info li i {
+        font-size: 16px;
+        margin-right: 10px;
+      }
+
+      .copyright {
+        text-align: center;
+        font-size: 14px;
+        padding-top: 20px;
+        border-top: 1px solid #444444;
+      }
+    </style>
+     <link
+     rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+   />
+</head>
+<body>
+    
+    <nav class="navbar">
+        <img src="./images/logo.jpg" class="logo" />
+        <ul class="nav-links">
+          <li class="nav-items"><a href="/" class="links">Home</a></li>
+          <li class="nav-items"><a href="./about" class="links">About Us</a></li>
+          <li class="nav-items"><a href="./food" class="links">Restaurants</a></li>
+          <li class="nav-items"><a href="./testimonials" class="links">Testimonials</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>Restaurant Menu</h1>
+    </header>
+
+    <section id="menu-container">
+        <!-- Menu items will be dynamically added here using JavaScript -->
+    </section>
+    <section id="cart">
+        <h2>Cart</h2>
+        <ul id="cart-items">
+            <!-- Cart items will be dynamically added here using JavaScript -->
+        </ul>
+        <p>Total Amount: <span id="total-amount">0</span></p>
+        <button id="checkoutBtn" onclick="redirectToPayment()">Checkout</button>
+    </section>
+    <footer>
+        <div class="container">
+          <div class="footer-grid">
+            <div class="footer-column">
+              <h3>Navigation</h3>
+              <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="./about">About Us</a></li>
+                <li><a href="#">Restaurants</a></li>
+                <li><a href="./food">Menu</a></li>
+                <li><a href="./contact">Testimonials</a></li>
+              </ul>
+            </div>
+  
+            <div class="footer-column">
+              <h3>Social Media</h3>
+              <ul class="social-media">
+                <li>
+                  <a href="https://www.facebook.com/" target="_blank">
+                    <i class="fa fa-facebook"></i>
+                    <span>Facebook</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/" target="_blank">
+                    <i class="fa fa-instagram"></i>
+                    <span>Instagram</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/" target="_blank">
+                    <i class="fa fa-twitter"></i>
+                    <span>Twitter</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+  
+            <div class="footer-column">
+              <h3>Legal</h3>
+              <ul class="legal-links">
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Contact Us</a></li>
+              </ul>
+            </div>
+  
+            <div class="footer-column">
+              <h3>Contact</h3>
+              <ul class="contact-info">
+                <li><i class="fa fa-phone"></i> +1 234 567 890</li>
+                <li><i class="fa fa-envelope"></i> info@jfood.com</li>
+                <li>
+                  <i class="fa fa-map-marker"></i> 123 Main Street, City, State
+                  12345
+                </li>
+              </ul>
+            </div>
+          </div>
+  
+          <div class="copyright">&copy; 2023 JFOOD. All rights reserved.</div>
+        </div>
+      </footer>
+
+    <script>
+        // Sample menu data (you can replace it with your actual menu data)
+        const menuData = [
+            { name: 'Burger', description: 'Lorem ipsum dolor sit amet.', price: 'Rs.189', image: '/Images/burger.jpg' },
+            { name: 'Noodles', description: 'Consectetur adipiscing elit.', price: 'Rs.289', image: '/Images/noodles.jpg' },
+            { name: 'Sandwitch', description: 'Pellentesque habitant morbi tristique senectus.', price: 'Rs.399', image: '/Images/sandwitch.jpg' },
+            { name: 'Spring roll', description: 'Pellentesque habitant morbi tristique senectus.', price: 'Rs.399', image: '/Images/springroll.jpg' },
+            { name: 'Pizza', description: 'Pellentesque habitant morbi tristique senectus.', price: 'Rs.399', image: '/Images/pizza.jpg' },
+            { name: 'Veg Chowmein', description: 'Pellentesque habitant morbi tristique senectus.', price: 'Rs.359', image: '/Images/chow mein.jpg' },
+            { name: 'Pasta', description: 'Pellentesque habitant morbi tristique senectus.', price: 'Rs.259', image: '/Images/pasta.jpg' },
+            { name: 'Shangai Roll', description: 'Pellentesque habitant morbi tristique senectus.', price: 'Rs.189', image: '/Images/shangai roll.jpg' },
+            { name: 'momos', description: 'Pellentesque habitant morbi tristique senectus.', price: 'Rs.259', image: '/Images/momos.jpg' },
+        ];
+
+        const menuContainer = document.getElementById('menu-container');
+
+        // Function to generate HTML for each menu item
+        function generateMenuItem(item) {
+            return `
+                <div class="menu-item">
+                    <img src="${item.image}" alt="${item.name}">
+                    <div class="item-info">
+                        <h3>${item.name}</h3>
+                        <p>${item.description}</p>
+                        <p>${item.price}</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Add menu items to the menu container
+        // menuData.forEach(item => {
+        //     const menuItemHTML = generateMenuItem(item);
+        //     menuContainer.innerHTML += menuItemHTML;
+        // });
+
+        // const menuContainer = document.getElementById('menu-container');
+        const cartItemsContainer = document.getElementById('cart-items');
+        const totalAmountDisplay = document.getElementById('total-amount');
+
+        let cartItems = [];
+        let totalAmount = 0;
+
+        // Function to update the cart display and total amount
+        function updateCart() {
+            cartItemsContainer.innerHTML = '';
+            totalAmount = 0;
+
+            cartItems.forEach((item, index) => {
+                const cartItem = document.createElement('li');
+                const itemQuantity = document.createElement('span');
+                const incrementButton = document.createElement('button');
+                const decrementButton = document.createElement('button');
+
+                if (item.quantity && item.quantity > 0) {
+                    itemQuantity.textContent = `Quantity: ${item.quantity}`;
+
+                    incrementButton.textContent = '+';
+                    incrementButton.addEventListener('click', () => {
+                        item.quantity += 1;
+                        updateCart();
+                    });
+
+                    decrementButton.textContent = '-';
+                    decrementButton.addEventListener('click', () => {
+                        if (item.quantity > 0) {
+                            item.quantity -= 1;
+                            if (item.quantity === 0) {
+                                cartItems.splice(index, 1);
+                            }
+                            updateCart();
+                        }
+                    });
+
+                    cartItem.textContent = `${item.name} - ${item.price} `;
+                    cartItem.appendChild(itemQuantity);
+                    cartItem.appendChild(incrementButton);
+                    cartItem.appendChild(decrementButton);
+
+                    cartItemsContainer.appendChild(cartItem);
+                    totalAmount += parseFloat(item.price.replace('Rs.', '')) * item.quantity;
+                }
+            });
+
+            totalAmountDisplay.textContent = totalAmount;
+        }
+
+        // Function to handle adding items to the cart
+        function addToCart(item) {
+            const existingItemIndex = cartItems.findIndex(cartItem => cartItem.name === item.name);
+
+            if (existingItemIndex !== -1) {
+                cartItems[existingItemIndex].quantity = (cartItems[existingItemIndex].quantity || 0) + 1;
+            } else {
+                item.quantity = 1;
+                cartItems.push(item);
+            }
+            updateCart();
+        }
+
+        // Add menu items to the menu container with click event listeners
+        menuData.forEach(item => {
+            const menuItemHTML = generateMenuItem(item);
+            const menuItem = document.createElement('div');
+            menuItem.innerHTML = menuItemHTML;
+            menuContainer.appendChild(menuItem);
+
+            menuItem.addEventListener('click', () => {
+                addToCart(item);
+            });
+        });
+        function redirectToPayment() {
+            // Replace this URL with your actual online payment page URL
+            window.location.href = 'https://example.com/payment'; // Example URL
+        }
+    </script>
+
+</body>
+</html>

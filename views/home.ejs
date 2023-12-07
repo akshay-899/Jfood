@@ -1,46 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-        <title>food</title>
-        <link rel="stylesheet" href="stylesheets/style1.css">
-    </head>
-    <body>
-        <div class="main">
-            <div class="wrapper">
-                <div class="header">
-                    <nav>
-
-                        <div class="logo">
-                            <a href="">JFOOD</a>
-                        </div>
-                        <ul>
-                            <li><a href="./">HOME</a></li>
-                            <li><a href="./about">ABOUT</a></li>
-                            <li><a href="./food">FOOD</a></li>
-                            <li><a href="./review">REVIEWS</a></li>
-                            <li><a href="">SERVICES</a></li>
-                            <li><a href="./contact">CONTACT</a></li>
-                        </ul>
-                    </nav>
-                    <div class="img"></div>
-                    <div class="over lay">
-                    <div class="content">
-                        <h1>WELCOME TO <br> JFOOD</h1>
-                        <h2 style="color: rgb(238, 34, 34);">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi aliquam dolor iusto fuga omnis inventore sapiente corrupti, aliquid temporibus ipsam, non, ratione provident veritatis repudiandae voluptatum est molestiae natus quas.</h2>
-                        <button>ORDER NOW</button>
-                    </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </body>
-</html> -->
-
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -59,7 +16,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-  </head>
+    </head>
   <body>
     <header>
       <nav class="navbar">
@@ -67,29 +24,10 @@
         <ul class="nav-links">
           <li class="nav-items"><a href="/" class="links">Home</a></li>
           <li class="nav-items"><a href="./about" class="links">About Us</a></li>
-          <li class="nav-items"><a href="#" class="links">Restaurants</a></li>
-          <li class="nav-items"><a href="./food" class="links">Menu</a></li>
-          <li class="nav-items"><a href="./contact" class="links">Track order</a></li>
+          <li class="nav-items"><a href="./restaurant" class="links">Restaurants</a></li>
+          <li class="nav-items"><a href="./testimonials" class="links">Testimonials</a></li>
         </ul>
-
-        <!-----Search box------>
-        <div class="nav-search">
-          <div class="search">
-            <input
-              type="text"
-              class="search-box"
-              placeholder="search Restaurants,Cuisines"
-            />
-            <button class="search-btn"><i class="fa fa-search"></i></button>
-          </div>
-
-          <!-------cart btn------>
-
-          <a href="#" class="cart"
-            ><i class="fa fa-shopping-cart" style="color: aliceblue;"></i
-          ></a>
-        </div>
-      </nav>
+    </nav>
 
       <!---------Hero section-->
       <main id="hero-section">
@@ -106,21 +44,10 @@
               typeSpeed: 100,
             });
           </script>
-          <div class="search location">
-            <input
-              type="text"
-              class="search-box"
-              placeholder="search Restaurants,Cuisines"
-            />
-            <button class="search-btn locate-btn">
-              <i class="fa fa-map-marker"></i>
-            </button>
+          <div>
           </div>
-
           <div class="hero-btn">
-            <button class="btn">Order food</button>
-            <p style="color: orange;">or</p>
-            <button class="btn transparent">Make Reservation</button>
+            <button class="btn">Order Now</button>
           </div>
         </div>
 
@@ -139,5 +66,77 @@
         </div>
       </main>
     </header>
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-column">
+            <h3>Navigation</h3>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="./about">About Us</a></li>
+              <li><a href="#">Restaurants</a></li>
+              <li><a href="./food">Menu</a></li>
+              <li><a href="./contact">Testimonials</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Social Media</h3>
+            <ul class="social-media">
+              <li>
+                <a href="https://www.facebook.com/" target="_blank">
+                  <i class="fa fa-facebook"></i>
+                  <span>Facebook</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/" target="_blank">
+                  <i class="fa fa-instagram"></i>
+                  <span>Instagram</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/" target="_blank">
+                  <i class="fa fa-twitter"></i>
+                  <span>Twitter</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Legal</h3>
+            <ul class="legal-links">
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Contact</h3>
+            <ul class="contact-info">
+              <li><i class="fa fa-phone"></i> +1 234 567 890</li>
+              <li><i class="fa fa-envelope"></i> info@jfood.com</li>
+              <li>
+                <i class="fa fa-map-marker"></i> 123 Main Street, City, State
+                12345
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="copyright">&copy; 2023 JFOOD. All rights reserved.</div>
+      </div>
+    </footer>
+    <script>
+ const foodOrderBtn = document.querySelector('.btn');
+
+foodOrderBtn.addEventListener('click', () => {
+  window.location.href = './restaurant'; // Replace with your actual file path
+});
+
+
+    </script>
   </body>
 </html>

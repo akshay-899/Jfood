@@ -13,14 +13,11 @@ router.get('/', function(req, res) {
 router.get('/about', function(req, res) {
   res.render('about'); // Render the home page with signup and login links
 });
-router.get('/food',function(req, res) {
-  res.render('food'); // Render the home page with signup and login links
+router.get('/restaurant',isLoggedIn,function(req, res) {
+  res.render('restaurant'); // Render the home page with signup and login links
 });
-router.get('/review', function(req, res) {
-  res.render('review'); // Render the home page with signup and login links
-});
-router.get('/contact', function(req, res) {
-  res.render('contact'); // Render the home page with signup and login links
+router.get('/testimonials', function(req, res) {
+  res.render('testimonials'); // Render the home page with signup and login links
 });
 
 router.get('/signup', function(req, res) {
@@ -40,45 +37,19 @@ router.post('/signup', function(req, res) {
       return res.render('signup'); // Render the register form again with an error message
     }
     passport.authenticate('local')(req, res, () => {
-      res.redirect('/food'); // Redirect to the profile page upon successful registration
+      res.redirect('/restaurant'); // Redirect to the profile page upon successful registration
     });
   });
   });
+  router.post('/login', passport.authenticate('local', {
+    successRedirect: "/restaurant",
+    failureRedirect: '/signup',
+    failureFlash: true
+  }), function(req, res) {
 
-  // router.post('/login', function(req, res) {
-  //   if (!req.body.email) {
-  //     res.redirect('/login');
-  //   }
+    res.status(200).send("Login successful!");
+  });
   
-  //   passport.authenticate('local')(req, res, (err) => {
-  //     if (err) {
-  //       // Handle authentication failure
-  //       console.error('Login failed:', err);
-  //       res.redirect('/login');
-  //       return;
-  //     }
-  
-  //     // Authentication successful
-  //     res.redirect('/food');
-  //   });
-  // });
-  
-
-  //bad request error
-//   router.post('/login',function(req,res){
-//     if(!req.body.email){
-//       res.redirect('/');
-//     }
-//     passport.authenticate('local')(req, res, () => {
-//     res.redirect('/profile'); // Redirect to the profile page upon successful registration
-//   });
-// });
-
-router.post('/login', passport.authenticate('local', {
-  successRedirect: "/food",
-  failureRedirect: "/signup", // Redirect back to login page upon failed login attempt
-}),function(req,res){
-});
 
 
 router.get("/logout", function(req, res,next){
@@ -93,7 +64,8 @@ function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
     return next();
   }
-  res.redirect("/login"); // Redirect to the login page if not authenticated
+  res.redirect("/login");
+  res.locals.error = req.flash('error'); // Redirect to the login page if not authenticated
 }
 
 module.exports = router;
