@@ -2,27 +2,32 @@
 <html>
 <head>
   <link rel="stylesheet" href="stylesheets/auth.css">
+  <link rel="icon" type="image/png" href="Images/img/favicon-32x32.png">
   <title>Create Account</title>
 </head>
 <body>
   <section>
     <div class="form-box">
       <div class="form-value">
-        <form action="/signup" method="POST">
+        <form action="/signup" method="POST" onsubmit="return validateForm()">
           <h2>Create account</h2>
           <div class="inputbox">
             <ion-icon name="person-outline"></ion-icon>
-            <input type="text" name="username" placeholder="username">
+            <input type="text" name="username" id="usernameInput" placeholder="username" autofocus onkeyup="validateField('usernameInput')">
           </div>
           <div class="inputbox">
             <ion-icon name="mail-outline"></ion-icon>
-            <input type="email" name="email" placeholder="Email">
+            <input type="email" name="email" id="emailInput" placeholder="Email" onkeyup="validateField('emailInput')">
+          </div>
+          <div class="inputbox">
+            <ion-icon name="call-outline"></ion-icon>
+            <input type="number" name="number" id="phoneNumberInput" placeholder="Phone Number" onkeyup="validateField('phoneNumberInput')">
           </div>
           <div class="inputbox">
             <ion-icon name="lock-closed-outline"></ion-icon>
-            <input type="password" name="password" placeholder="Password">
+            <input type="password" name="password" id="passwordInput" placeholder="Password" onkeyup="validateField('passwordInput')">
           </div>
-          <input type="submit" value="Register" class="register">
+          <input type="submit" value="Register" class="register" id="registerButton" disabled>
           <div class ="login">
             <p>Have an account? <a href='login' class="slogin">Log in</a></p>
           </div>
@@ -32,5 +37,36 @@
   </section>
   <script type="module" src="https://unpkg.com/ionicon@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>
+    function validateField(fieldId) {
+      var field = document.getElementById(fieldId);
+      var fieldValue = field.value.trim();
+      if (fieldValue === "") {
+        field.value = ""; 
+        field.focus(); 
+      }
+      validateForm(); // Check form validation after each input
+    }
+
+    function validateForm() {
+      var username = document.getElementById("usernameInput").value.trim();
+      var email = document.getElementById("emailInput").value.trim();
+      var password = document.getElementById("passwordInput").value.trim();
+      var phoneNumber = document.getElementById("phoneNumberInput").value.trim();
+
+      var registerButton = document.getElementById("registerButton");
+
+      if (username !== "" && email !== "" && password !== "" && phoneNumber !== "" && phoneNumber.length === 10) {
+        registerButton.disabled = false; 
+        registerButton.style.opacity = "1";// Enable the Register button if all fields are filled and phone number is 10 digits
+      } else {
+        registerButton.disabled = true;
+        registerButton.style.opacity = "0.5"; // Disable the Register button if any field is empty or phone number is not 10 digits
+      }
+    }
+  </script>
 </body>
 </html>
+
+
+

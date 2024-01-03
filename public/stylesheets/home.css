@@ -270,6 +270,8 @@ body {
   left: 25%;
   bottom: -20%;
 }
+
+/* footer */
 footer {
   background: linear-gradient(to bottom, #222222, #333333);
   padding: 40px 0;
