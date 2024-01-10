@@ -28,6 +28,27 @@ router.get('/login', function(req, res) {
   res.render('login'); // Render the login form
 });
 
+//payment route
+router.post('/processPayment', (req, res) => {
+  const { cardNumber, expiryDate, cvv, cardHolder } = req.body;
+
+  // Perform validation (add your specific validation logic here)
+  if (!cardNumber || !expiryDate || !cvv || !cardHolder) {
+      res.status(400).send('Please fill in all fields.');
+  } else {
+      // If the form data is valid, redirect to the 'thankyou' page
+      res.redirect('/thankyou');
+  }
+});
+
+// Route to render the 'thankyou' page
+router.get('/thankyou', (req, res) => {
+  res.render('thankyou'); // Assuming 'thankyou' is your view template
+});
+router.get('/payment', (req, res) => {
+  res.render('payment'); // Assuming 'thankyou' is your view template
+});
+
 
 router.post('/signup', function(req, res) {
   const userData=new userModel({
@@ -66,4 +87,3 @@ function isLoggedIn(req, res, next) {
 }
 
 module.exports = router;
-
