@@ -129,10 +129,7 @@
         h3, p {
             margin: 0;
         }
-        /* #img{
-            height: 100;
-            width: 100;
-        } */
+
         @media only screen and (max-width: 600px) {
             .menu-item {
                 width: calc(100% - 40px);
@@ -140,10 +137,7 @@
             
         }
         #cart {
-            /* background-image: linear-gradient(
-    to bottom right,
-    rgb(218, 229, 232) 40%,
-    #43ddd2 150%); */
+
             margin: 20px;
             padding: 20px;
             border: 1px solid #ccc;
@@ -183,14 +177,7 @@
             align-items: center;
         }
 
-        #cart-items li div span {
-            padding: 25px;
-            gap: 80px;
-            font-weight: bold;
-            margin-right: 10px;
-        }
-
-        #cart-items li button {
+        #cart-items  button {
            
             background-color: #ff6347;
             color: #fff;
@@ -205,16 +192,24 @@
         #cart-items li button:hover {
             transform: scale(1.1);
         }
-
+        
         #total-amount {
-            font-weight: bold;
-            font-size: 1.4em;
-            color: #ff6347;
-            margin-top: 15px;
+          padding: 0px;
+          font-weight: 600;
+          /* font-size: 1.4em; */
+          color: #ff6347;
+          margin-top: 15px;
         }
-        span{
-            text-decoration: underline;
-            /* padding: 25px; */
+        #cart span #total-amount{
+          padding: 0px;
+        }
+        #cart span{
+          padding-left: 25px;
+        }
+        #cart p{
+          margin:25px;
+          font-weight: 600;
+          font-size: 1.2em;
         }
 
 
@@ -222,8 +217,9 @@
             width: fit-content;
             height: fit-content;
             margin-top: 15px;
-            background-color: #141414;
-            color: #d71e1e;
+            background-color: #f15454;
+            color: black;
+            transform: scale(1.05);
             border: none;
             padding: 10px 20px;
             border-radius: 5px;
@@ -234,7 +230,7 @@
         }
 
         #checkoutBtn:hover {
-            transform: scale(1.05);
+            transform: scale(1.25);
             color: white;
         }
         footer {
@@ -431,7 +427,7 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="./about">About Us</a></li>
                 <li><a href="./restaurant">Restaurants</a></li>
-                <li><a href="./contact">Testimonials</a></li>
+                <li><a href="./testimonials">Testimonials</a></li>
               </ul>
             </div>
   
@@ -487,32 +483,36 @@
 
     <script>
         const menuData = [
-            { name: 'Burger', description: 'Lorem ipsum dolor sit amet.', price: 'Rs.189', image: '/Images/burger.jpg' },
-            { name: 'Noodles', description: 'Consectetur adipiscing elit.', price: 'Rs.289', image: '/Images/noodles.jpg' },
-            { name: 'Sandwitch', description: 'Pellentesque habitant morbi tristique senectus.', price: 'Rs.399', image: '/Images/sandwitch.jpg' },
-            { name: 'Spring roll', description: 'Pellentesque habitant morbi tristique senectus.', price: 'Rs.399', image: '/Images/springroll.jpg' },
-            { name: 'Pizza', description: 'Pellentesque habitant morbi tristique senectus.', price: 'Rs.399', image: '/Images/pizza.jpg' },
-            { name: 'Veg Chowmein', description: 'Pellentesque habitant morbi tristique senectus.', price: 'Rs.359', image: '/Images/chow mein.jpg' },
-            { name: 'Pasta', description: 'Pellentesque habitant morbi tristique senectus.', price: 'Rs.259', image: '/Images/pasta.jpg' },
-            { name: 'Shangai Roll', description: 'Pellentesque habitant morbi tristique senectus.', price: 'Rs.189', image: '/Images/shangai roll.jpg' },
-            { name: 'momos', description: 'Pellentesque habitant morbi tristique senectus.', price: 'Rs.259', image: '/Images/momos.jpg' },
+           
+  { name: 'Burger', description: 'A classic burger with a juicy patty, fresh lettuce, tomatoes, and special sauce, served in a soft bun.', price: 'Rs.189', image: '/Images/burger.jpg' },
+  { name: 'Noodles', description: 'Delicious stir-fried noodles tossed with a medley of colorful vegetables and your choice of protein.', price: 'Rs.180', image: '/Images/noodles.jpg' },
+  { name: 'Sandwich', description: 'A hearty sandwich featuring layers of your favorite fillings like ham, cheese, lettuce, and tomatoes, all nestled between slices of fresh bread.', price: 'Rs.150', image: '/Images/sandwich.jpg' },
+  { name: 'Spring roll', description: 'Crispy and flavorful spring rolls filled with a mixture of vegetables, noodles, and your choice of protein, served with a dipping sauce.', price: 'Rs.200', image: '/Images/springroll.jpg' },
+  { name: 'Large Pizza', description: 'A mouthwatering large pizza with a thin, crispy crust, topped with a generous amount of tomato sauce, cheese, and your favorite toppings.', price: 'Rs.499', image: '/Images/pizza.jpg' },
+  { name: 'Veg Chowmein', description: 'Stir-fried noodles loaded with a variety of fresh vegetables and savory sauces, creating a delightful and satisfying dish.', price: 'Rs.180', image: '/Images/chow mein.jpg' },
+  { name: 'Pasta', description: 'Al dente pasta tossed in a rich and flavorful sauce, complemented by a mix of herbs, vegetables, and your choice of protein.', price: 'Rs.150', image: '/Images/pasta.jpg' },
+  { name: 'Shanghai Roll', description: 'A delightful Shanghai roll filled with a tasty combination of ingredients, rolled up in a thin wrapper and served with a tangy dipping sauce.', price: 'Rs.189', image: '/Images/shanghai roll.jpg' },
+  { name: 'Momos', description: 'Steamed or pan-fried dumplings filled with a delectable mixture of minced meat or vegetables, seasoned to perfection and served with a zesty dipping sauce.', price: 'Rs.120', image: '/Images/momos.jpg' }
+
+
         ];
 
         const menuContainer = document.getElementById('menu-container');
 
         // Function to generate HTML for each menu item
         function generateMenuItem(item) {
-            return `
-                <div class="menu-item">
-                    <img src="${item.image}" alt="${item.name}">
-                    <div class="item-info">
-                        <h3>${item.name}</h3>
-                        <p>${item.description}</p>
-                        <p>${item.price}</p>
-                    </div>
-                </div>
-            `;
-        }
+  return `
+    <div class="menu-item">
+      <img src="${item.image}" alt="${item.name}">
+      <div class="item-info">
+        <h3>${item.name}</h3>
+        <p>${item.description}</p>
+        <p style="color: red; display:flex;justify-content:center;margin:10px; border:2px solid blue;padding:5px;border-radius:50px;">${item.price}</p>
+      </div>
+    </div>
+  `;
+}
+
 
         // Add menu items to the menu container
         // menuData.forEach(item => {
