@@ -25,28 +25,24 @@ router.get('/signup', function(req, res) {
 });
 
 router.get('/login', function(req, res) {
-  res.render('login'); // Render the login form
+  res.render('login');
 });
 
 //payment route
 router.post('/processPayment', (req, res) => {
   const { cardNumber, expiryDate, cvv, cardHolder } = req.body;
-
-  // Perform validation (add your specific validation logic here)
   if (!cardNumber || !expiryDate || !cvv || !cardHolder) {
       res.status(400).send('Please fill in all fields.');
   } else {
-      // If the form data is valid, redirect to the 'thankyou' page
       res.redirect('/thankyou');
   }
 });
 
-// Route to render the 'thankyou' page
 router.get('/thankyou', (req, res) => {
-  res.render('thankyou'); // Assuming 'thankyou' is your view template
+  res.render('thankyou'); 
 });
 router.get('/payment', (req, res) => {
-  res.render('payment'); // Assuming 'thankyou' is your view template
+  res.render('payment'); 
 });
 
 
@@ -77,13 +73,12 @@ router.get("/logout", function(req, res,next){
 });
 });
 
-
+//middleware
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
     return next();
   }
   res.redirect('/login');
-   // Redirect to the login page if not authenticated
 }
 
 module.exports = router;

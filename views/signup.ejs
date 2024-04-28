@@ -38,34 +38,7 @@
   </section>
   <script type="module" src="https://unpkg.com/ionicon@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <script>
-    function validateField(fieldId) {
-      var field = document.getElementById(fieldId);
-      var fieldValue = field.value.trim();
-      if (fieldValue === "") {
-        field.value = ""; 
-        field.focus(); 
-      }
-      validateForm(); // Check form validation after each input
-    }
-
-    function validateForm() {
-      var username = document.getElementById("usernameInput").value.trim();
-      var email = document.getElementById("emailInput").value.trim();
-      var password = document.getElementById("passwordInput").value.trim();
-      var phoneNumber = document.getElementById("phoneNumberInput").value.trim();
-
-      var registerButton = document.getElementById("registerButton");
-
-      if (username !== "" && email !== "" && password !== "" && phoneNumber !== "" && phoneNumber.length === 10) {
-        registerButton.disabled = false; 
-        registerButton.style.opacity = "1";// Enable the Register button if all fields are filled and phone number is 10 digits
-      } else {
-        registerButton.disabled = true;
-        registerButton.style.opacity = "0.5"; // Disable the Register button if any field is empty or phone number is not 10 digits
-      }
-    }
-  </script>
+  <script src="javascripts/signup.js"></script>
 </body>
 </html>
 
