@@ -26,8 +26,6 @@ nodemon
 
 👤 **M Akshay Prabhu**
 
-- Github: [@akshay-899](https://github.com/akshay-899)
-
 👤 **P Nidhi Padiyar**
 
 👤 **Amrutha S Prabhu**
