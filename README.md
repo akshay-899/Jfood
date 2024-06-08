@@ -6,8 +6,8 @@
 > Jfood is a web-based food delivery platform designed to connect users with local restaurants and facilitate online ordering.
 
 
-##Prerequisite
-> Clone the repository, make sure that you have installed MongoDB compass :)
+## Prerequisite
+Clone the repository, make sure that you have installed MongoDB compass :)
 
 
 ## Install
@@ -22,17 +22,18 @@ npm install
 nodemon
 ```
 
-## Author
+## Contributors
 
-👤 **M Akshay Prabhu **
+👤 **M Akshay Prabhu**
 
-* Github: [@akshay-899](https://github.com/akshay-899)
+- Github: [@akshay-899](https://github.com/akshay-899)
 
-👤 **P Nidhi Padiyar **
+👤 **P Nidhi Padiyar**
 
-👤 **Amrutha S Prabhu  **
+👤 **Amrutha S Prabhu**
 
-👤 **Dhanu Aras **
+👤 **Dhanu Aras**
+
 
 
 
