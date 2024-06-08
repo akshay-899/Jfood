@@ -3,7 +3,8 @@
   <img alt="Version" src="https://img.shields.io/badge/version-0.0.0-blue.svg?cacheSeconds=2592000" />
 </p>
 
-> Jfood is a web-based food delivery platform designed to connect users with local restaurants and facilitate online
+> Jfood is a web-based food delivery platform designed to connect users with local restaurants and facilitate online ordering.
+
 
 ## Install
 
@@ -23,9 +24,13 @@ nodemon
 
 * Github: [@akshay-899](https://github.com/akshay-899)
 
-## Show your support
+👤 **P Nidhi Padiyar **
+
+👤 **Amrutha S Prabhu  **
+
+👤 **Dhanu Aras **
+
+
+
 
 Give a ⭐️ if this project helped you!
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
